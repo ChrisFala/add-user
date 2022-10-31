@@ -1,0 +1,13 @@
+User input form
+    -Accepts Username
+    -Accepts age
+    -Checks for content in both user input fields
+        -If invalid, display warning overlay
+    -Checks for valid age (>0)
+        -If invalid, display warning overlay
+    -Reset input fields on User Submit
+    -Create User Card on submit
+
+User Card
+    -Display Username and Age from user input fields
+    -Not necessary to delete on click
