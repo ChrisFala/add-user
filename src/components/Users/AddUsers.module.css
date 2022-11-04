@@ -1,0 +1,15 @@
+.button {
+    font:inherit;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #5c5470;
+    color: white;
+    background: #5c5470;
+    cursor: pointer;
+}
+
+.label {
+    font:inherit;
+    color: white;
+    background: #5c5470;
+    cursor: pointer;
+}
