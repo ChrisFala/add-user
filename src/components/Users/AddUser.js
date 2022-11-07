@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from './AddUsers.module.css'
+import styles from './AddUser.module.css'
 
 const AddUser = (props) => {
     const [enteredUsername, setEnteredUsername] = useState('');
@@ -7,14 +7,19 @@ const AddUser = (props) => {
 
     const usernameChangeHandler = (event) => {
         setEnteredUsername(event.target.value)
-        console.log(event.target.value)
     }
     const ageChangeHandler = (event) => {
         setEnteredAge(event.target.value)
     }
 
+    const userData = {
+        username: enteredUsername,
+        age: enteredAge
+    }
+
     const addUserHandler = (event) => {
         event.preventDefault();
+        props.onAddUser(userData)
         setEnteredUsername('')
         setEnteredAge('')
     }
@@ -35,7 +40,10 @@ const AddUser = (props) => {
                 value={enteredAge}
                 onChange={ageChangeHandler}
             />
-            <button className={styles.button} type="submit">Add User</button>
+            <button
+                className={styles.button}
+                type="submit"
+            >Add User</button>
         </form>
     );
 };
