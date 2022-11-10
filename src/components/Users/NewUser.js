@@ -1,14 +1,18 @@
 import AddUser from "./AddUser"
 
-const NewUser = (props) => {
-    
-    //Complete handling user data to be put into user card
-    const addUserHandler = (enteredUserData) => {
+const NewUser = () => {
+    const saveUserDataHandler = (enteredUserData) => {
+        const userData = {
+            ...enteredUserData,
+            id: Math.random().toString()
+        };
+        console.log(userData)
     }
+
 
     return (
         <div>
-            <AddUser onAddUser={addUserHandler}/>
+            <AddUser onSaveUserData={saveUserDataHandler} />
         </div>
     )
 }

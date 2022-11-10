@@ -10,18 +10,19 @@ const AddUser = (props) => {
     }
     const ageChangeHandler = (event) => {
         setEnteredAge(event.target.value)
-    }
-
-    const userData = {
-        username: enteredUsername,
-        age: enteredAge
-    }
+    }   
 
     const addUserHandler = (event) => {
         event.preventDefault();
-        props.onAddUser(userData)
-        setEnteredUsername('')
-        setEnteredAge('')
+
+        const userData = {
+            username: enteredUsername,
+            age: enteredAge
+        };
+        console.log(props.onSaveUserData)
+        props.onSaveUserData(userData);
+        setEnteredUsername('');
+        setEnteredAge('');
     }
 
     return (
