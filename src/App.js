@@ -1,6 +1,5 @@
 import React from 'react';
-import AddUser from './components/Users/AddUser';
-import NewUser from './components/Users/NewUser'
+import NewUser from './components/Users/NewUser';
 
 
 function App() {
