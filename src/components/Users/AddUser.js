@@ -6,6 +6,7 @@ import styles from './AddUser.module.css'
 const AddUser = (props) => {
     const [enteredUsername, setEnteredUsername] = useState('');
     const [enteredAge, setEnteredAge] = useState('');
+    const [inputError, setInputError] = useState(false)
 
     const usernameChangeHandler = (event) => {
         setEnteredUsername(event.target.value)
@@ -18,9 +19,11 @@ const AddUser = (props) => {
         event.preventDefault();
 
         if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
+            setInputError(true)         
             return
         }
         if (+enteredAge < 1) {
+            setInputError(true)
             return
         }
 
@@ -34,9 +37,10 @@ const AddUser = (props) => {
         setEnteredAge('');
     }
 
+
     return (
         <div>
-            <ErrorModal title="An error occured" message="User Input is Invalid" />
+            {inputError && <ErrorModal title="An error occured" message="User Input is Invalid" />}
             <Card>
                 <form onSubmit={addUserHandler}>
                     <label className={styles.label} htmlFor="username">Username</label>
